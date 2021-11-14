@@ -11,18 +11,16 @@ public class SelenideTestWithListener {
 
     @Test
     public void testGitHub(){
-        open("github.com");
+        open("https://github.com");
 
         $(".header-search-input").click();
         $(".header-search-input").sendKeys("npocbet/qaguru_6");
-        $(".header-search-input").click();
+        $(".header-search-input").submit();
 
         $(By.linkText("npocbet/qaguru_6")).click();
         $(By.partialLinkText("Issues")).click();
 
         $(withText("#1")).should(Condition.visible);
-
-        sleep(10000);
 
     }
 
