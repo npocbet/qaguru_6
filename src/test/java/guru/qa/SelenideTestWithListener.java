@@ -1,9 +1,11 @@
 package guru.qa;
 
+import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selectors.withText;
+import static com.codeborne.selenide.Selenide.*;
 
 public class SelenideTestWithListener {
 
@@ -15,12 +17,13 @@ public class SelenideTestWithListener {
         $(".header-search-input").sendKeys("npocbet/qaguru_6");
         $(".header-search-input").click();
 
+        $(By.linkText("npocbet/qaguru_6")).click();
+        $(By.partialLinkText("Issues")).click();
 
+        $(withText("#1")).should(Condition.visible);
+
+        sleep(10000);
 
     }
-
-
-
-
 
 }
