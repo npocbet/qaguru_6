@@ -1,6 +1,8 @@
 package guru.qa;
 
 import guru.qa.steps.WebSteps;
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class SelenideStepAnnotatedTest {
@@ -10,6 +12,8 @@ public class SelenideStepAnnotatedTest {
     private WebSteps steps = new WebSteps();
 
     @Test
+    @Owner("npocbet(kravtsovsv)")
+    @DisplayName("Тест гитхаба, Issues в репозитории. Шаги с аннотацией @Step")
     public void testGitHub(){
         steps.openMainPage();
         steps.searchRepository(REPOSITORY);
